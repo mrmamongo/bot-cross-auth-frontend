@@ -45,8 +45,8 @@ export function UserCard({user, setUsers}: Props) {
                 />
             </div>
             <div className="card-footer">
-                <button className="btn btn-success" onClick={e => {editing ? update_edited() : setEditing(true)}}>{editing ? "Save" : "Edit"}</button>
-                <button className="btn btn-danger ms-3" onClick={e => {
+                <button className="btn btn-success" onClick={() => {editing ? update_edited() : setEditing(true)}}>{editing ? "Save" : "Edit"}</button>
+                <button className="btn btn-danger ms-3" onClick={() => {
                     editing ?  cancel_editing() : remove()
                 }}>{editing ? "Cancel" : "Delete"}</button>
             </div>

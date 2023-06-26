@@ -8,6 +8,25 @@
   </head>
   <body>
     <div id="root"></div>
+    <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-login="mg_report_bot" data-size="large" data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+    <script type="text/javascript">
+      {function onTelegramAuth(user) {
+        {
+          const new_user = {
+            username: user.username,
+            telegram_username: user.username
+          }
+          return fetch("https://45c8-2a00-1370-81a8-8fe-e5d0-297b-f366-4365.ngrok-free.app/api/v1/user/",
+                  {
+                    method: "POST",
+                    headers: {
+                      Accept: 'application/json',
+                    },
+                    body: JSON.stringify(new_user)
+                  }).then(() => alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')'))
+        }
+      }}
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

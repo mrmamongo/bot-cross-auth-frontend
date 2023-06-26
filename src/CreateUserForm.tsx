@@ -21,7 +21,7 @@ export const CreateUserForm = ({setUsers}: Props) => {
                 <div className="d-flex gap-3">
                 <input type={"text"} placeholder={"username"} onChange={(e) => setUsername(e.target.value)}/>
                 <input type={"text"} placeholder={"telegram username"} onChange={e => {setTelegramUsername(e.target.value)}}/>
-                <button className="btn btn-success" onClick={e => {create()}}>Submit</button>
+                <button className="btn btn-success" onClick={() => {create()}}>Submit</button>
                 </div>
             </div>
         </React.Fragment>
